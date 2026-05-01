@@ -25,8 +25,10 @@ public class UserServiceCustom {
     }
 
     public void registerUser(@Valid UserRegistration userRegistration) {
-        User user = mapper.updateUserFromDto(userRegistration);
-        user = userRepository.save(user);
+        User user = new User();
+        mapper.updateUserFromDto(userRegistration,user);
+        System.out.println("registerUser: user : "+user);
+        user = userRepo.save(user);
         mapper.updateUserToDto(user,userRegistration);
     }
 

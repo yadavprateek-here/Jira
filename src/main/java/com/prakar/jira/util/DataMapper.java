@@ -12,6 +12,6 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 )
 public interface DataMapper {
 
-    User updateUserFromDto(UserRegistration dto);
+    void updateUserFromDto(UserRegistration dto,@MappingTarget User user);
     void updateUserToDto( User user ,@MappingTarget UserRegistration dto);
 }

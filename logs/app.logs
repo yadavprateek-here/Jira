@@ -1,0 +1,206 @@
+2026-05-01T21:51:28.129+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Starting JiraApplication using Java 26.0.1 with PID 17864 (C:\Users\prate\IdeaProjects\Jira\target\classes started by prate in C:\Users\prate\IdeaProjects\Jira)
+2026-05-01T21:51:28.129+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T21:51:28.345+05:30  INFO 17864 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T21:51:28.359+05:30  INFO 17864 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2026-05-01T21:51:28.481+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-01T21:51:28.482+05:30  INFO 17864 --- [Jira] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T21:51:28.482+05:30  INFO 17864 --- [Jira] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-01T21:51:28.512+05:30  INFO 17864 --- [Jira] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 380 ms
+2026-05-01T21:51:28.569+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-01T21:51:28.616+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T21:51:28.617+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2026-05-01T21:51:28.639+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-15 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21b0c753
+2026-05-01T21:51:28.640+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2026-05-01T21:51:28.642+05:30  WARN 17864 --- [Jira] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-01T21:51:28.642+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.7
+	Default catalog/schema: db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-01T21:51:28.699+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T21:51:28.727+05:30  INFO 17864 --- [Jira] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:51:28.843+05:30  WARN 17864 --- [Jira] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-01T21:51:28.889+05:30  INFO 17864 --- [Jira] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-05-01T21:51:29.083+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-01T21:51:29.085+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Started JiraApplication in 1.022 seconds (process running for 3169.041)
+2026-05-01T21:51:29.087+05:30  INFO 17864 --- [Jira] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-01T21:55:46.042+05:30  INFO 17864 --- [Jira] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-05-01T21:55:46.044+05:30  INFO 17864 --- [Jira] [Thread-57] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T21:55:46.058+05:30  INFO 17864 --- [Jira] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-01T21:55:46.061+05:30  INFO 17864 --- [Jira] [Thread-57] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:55:46.062+05:30  INFO 17864 --- [Jira] [Thread-57] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2026-05-01T21:55:46.079+05:30  INFO 17864 --- [Jira] [Thread-57] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2026-05-01T21:55:46.170+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Starting JiraApplication using Java 26.0.1 with PID 17864 (C:\Users\prate\IdeaProjects\Jira\target\classes started by prate in C:\Users\prate\IdeaProjects\Jira)
+2026-05-01T21:55:46.170+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T21:55:46.422+05:30  INFO 17864 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T21:55:46.440+05:30  INFO 17864 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository interfaces.
+2026-05-01T21:55:46.602+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-01T21:55:46.604+05:30  INFO 17864 --- [Jira] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T21:55:46.604+05:30  INFO 17864 --- [Jira] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-01T21:55:46.639+05:30  INFO 17864 --- [Jira] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 467 ms
+2026-05-01T21:55:46.719+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-01T21:55:46.773+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T21:55:46.774+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2026-05-01T21:55:46.799+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-16 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15c351f0
+2026-05-01T21:55:46.799+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2026-05-01T21:55:46.800+05:30  WARN 17864 --- [Jira] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-01T21:55:46.801+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.7
+	Default catalog/schema: db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-01T21:55:46.852+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T21:55:46.880+05:30  INFO 17864 --- [Jira] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:55:46.998+05:30  WARN 17864 --- [Jira] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-01T21:55:47.037+05:30  INFO 17864 --- [Jira] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-05-01T21:55:47.239+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-01T21:55:47.242+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Started JiraApplication in 1.103 seconds (process running for 3427.197)
+2026-05-01T21:55:47.243+05:30  INFO 17864 --- [Jira] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-01T21:55:49.638+05:30  INFO 17864 --- [Jira] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-05-01T21:55:49.640+05:30  INFO 17864 --- [Jira] [Thread-61] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T21:55:49.648+05:30  INFO 17864 --- [Jira] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-01T21:55:49.650+05:30  INFO 17864 --- [Jira] [Thread-61] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:55:49.651+05:30  INFO 17864 --- [Jira] [Thread-61] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2026-05-01T21:55:49.654+05:30  INFO 17864 --- [Jira] [Thread-61] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2026-05-01T21:55:49.726+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Starting JiraApplication using Java 26.0.1 with PID 17864 (C:\Users\prate\IdeaProjects\Jira\target\classes started by prate in C:\Users\prate\IdeaProjects\Jira)
+2026-05-01T21:55:49.727+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T21:55:49.849+05:30  INFO 17864 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T21:55:49.860+05:30  INFO 17864 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
+2026-05-01T21:55:49.970+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-01T21:55:49.993+05:30  INFO 17864 --- [Jira] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 265 ms
+2026-05-01T21:55:50.026+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-01T21:55:50.057+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T21:55:50.058+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2026-05-01T21:55:50.071+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-17 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5da0ce53
+2026-05-01T21:55:50.071+05:30  INFO 17864 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2026-05-01T21:55:50.073+05:30  WARN 17864 --- [Jira] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-01T21:55:50.074+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.7
+	Default catalog/schema: db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-01T21:55:50.112+05:30  INFO 17864 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T21:55:50.132+05:30  INFO 17864 --- [Jira] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:55:50.217+05:30  WARN 17864 --- [Jira] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-01T21:55:50.299+05:30  INFO 17864 --- [Jira] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-05-01T21:55:50.409+05:30  INFO 17864 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-01T21:55:50.411+05:30  INFO 17864 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Started JiraApplication in 0.703 seconds (process running for 3430.367)
+2026-05-01T21:55:50.411+05:30  INFO 17864 --- [Jira] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T21:55:50.412+05:30  INFO 17864 --- [Jira] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-01T21:55:50.420+05:30  INFO 17864 --- [Jira] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-01T21:55:50.422+05:30  INFO 17864 --- [Jira] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:55:50.423+05:30  INFO 17864 --- [Jira] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2026-05-01T21:55:50.429+05:30  INFO 17864 --- [Jira] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2026-05-01T21:55:52.902+05:30  INFO 9560 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Starting JiraApplication using Java 26.0.1 with PID 9560 (C:\Users\prate\IdeaProjects\Jira\target\classes started by prate in C:\Users\prate\IdeaProjects\Jira)
+2026-05-01T21:55:52.909+05:30  INFO 9560 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T21:55:52.984+05:30  INFO 9560 --- [Jira] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-01T21:55:52.985+05:30  INFO 9560 --- [Jira] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-01T21:55:53.869+05:30  INFO 9560 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T21:55:53.922+05:30  INFO 9560 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-05-01T21:55:54.389+05:30  INFO 9560 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-01T21:55:54.399+05:30  INFO 9560 --- [Jira] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T21:55:54.400+05:30  INFO 9560 --- [Jira] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-01T21:55:54.440+05:30  INFO 9560 --- [Jira] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1454 ms
+2026-05-01T21:55:54.588+05:30  INFO 9560 --- [Jira] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-01T21:55:54.651+05:30  INFO 9560 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-01T21:55:55.062+05:30  INFO 9560 --- [Jira] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T21:55:55.088+05:30  INFO 9560 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-01T21:55:55.399+05:30  INFO 9560 --- [Jira] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78770336
+2026-05-01T21:55:55.401+05:30  INFO 9560 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-01T21:55:55.445+05:30  WARN 9560 --- [Jira] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-01T21:55:55.460+05:30  INFO 9560 --- [Jira] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.7
+	Default catalog/schema: db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-01T21:55:56.266+05:30  INFO 9560 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T21:55:56.355+05:30  INFO 9560 --- [Jira] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:55:56.466+05:30  INFO 9560 --- [Jira] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-01T21:55:56.766+05:30  WARN 9560 --- [Jira] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-01T21:55:56.840+05:30  INFO 9560 --- [Jira] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-05-01T21:55:57.336+05:30  INFO 9560 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-01T21:55:57.342+05:30  INFO 9560 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Started JiraApplication in 4.991 seconds (process running for 6.224)
+2026-05-01T21:56:07.408+05:30  INFO 9560 --- [Jira] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-01T21:56:07.408+05:30  INFO 9560 --- [Jira] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-01T21:56:07.408+05:30  INFO 9560 --- [Jira] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-01T21:56:07.653+05:30  WARN 9560 --- [Jira] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-05-01T21:56:07.653+05:30  WARN 9560 --- [Jira] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.error             : Duplicate entry 'prateek@gmail.com' for key 'user.UKob8kqyqqgmefl0aco34akdtpe'
+2026-05-01T21:56:07.673+05:30 ERROR 9560 --- [Jira] [http-nio-8080-exec-2] com.prakar.jira.advice.GlobalAdvice      : 2026-05-01T21:56:07.673205700 -- Req:SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@16374af7]  -- logs:could not execute statement [Duplicate entry 'prateek@gmail.com' for key 'user.UKob8kqyqqgmefl0aco34akdtpe'] [insert into user (email,password,role,user_name) values (?,?,?,?)]; SQL [insert into user (email,password,role,user_name) values (?,?,?,?)]; constraint [user.UKob8kqyqqgmefl0aco34akdtpe]
+2026-05-01T21:56:07.723+05:30  WARN 9560 --- [Jira] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry 'prateek@gmail.com' for key 'user.UKob8kqyqqgmefl0aco34akdtpe'] [insert into user (email,password,role,user_name) values (?,?,?,?)]; SQL [insert into user (email,password,role,user_name) values (?,?,?,?)]; constraint [user.UKob8kqyqqgmefl0aco34akdtpe]]
+2026-05-01T21:59:44.609+05:30  INFO 9560 --- [Jira] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T21:59:44.622+05:30  INFO 9560 --- [Jira] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-01T21:59:44.628+05:30  INFO 9560 --- [Jira] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:59:44.631+05:30  INFO 9560 --- [Jira] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-01T21:59:44.638+05:30  INFO 9560 --- [Jira] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-01T21:59:47.062+05:30  INFO 19320 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Starting JiraApplication using Java 26.0.1 with PID 19320 (C:\Users\prate\IdeaProjects\Jira\target\classes started by prate in C:\Users\prate\IdeaProjects\Jira)
+2026-05-01T21:59:47.066+05:30  INFO 19320 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T21:59:47.135+05:30  INFO 19320 --- [Jira] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-01T21:59:47.136+05:30  INFO 19320 --- [Jira] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-01T21:59:48.096+05:30  INFO 19320 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T21:59:48.171+05:30  INFO 19320 --- [Jira] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-05-01T21:59:48.988+05:30  INFO 19320 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-01T21:59:49.002+05:30  INFO 19320 --- [Jira] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-01T21:59:49.003+05:30  INFO 19320 --- [Jira] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-01T21:59:49.068+05:30  INFO 19320 --- [Jira] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1931 ms
+2026-05-01T21:59:49.298+05:30  INFO 19320 --- [Jira] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-01T21:59:49.371+05:30  INFO 19320 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-01T21:59:50.050+05:30  INFO 19320 --- [Jira] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T21:59:50.096+05:30  INFO 19320 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-01T21:59:50.601+05:30  INFO 19320 --- [Jira] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1728e0fd
+2026-05-01T21:59:50.603+05:30  INFO 19320 --- [Jira] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-01T21:59:50.689+05:30  WARN 19320 --- [Jira] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-01T21:59:50.719+05:30  INFO 19320 --- [Jira] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.7
+	Default catalog/schema: db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-01T21:59:51.828+05:30  INFO 19320 --- [Jira] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T21:59:51.891+05:30  INFO 19320 --- [Jira] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:59:51.957+05:30  INFO 19320 --- [Jira] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-01T21:59:52.158+05:30  WARN 19320 --- [Jira] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-01T21:59:52.216+05:30  INFO 19320 --- [Jira] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-05-01T21:59:52.622+05:30  INFO 19320 --- [Jira] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-01T21:59:52.628+05:30  INFO 19320 --- [Jira] [restartedMain] com.prakar.jira.JiraApplication          : Started JiraApplication in 6.175 seconds (process running for 7.24)
+2026-05-01T22:00:27.065+05:30  INFO 19320 --- [Jira] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-01T22:00:27.065+05:30  INFO 19320 --- [Jira] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-01T22:00:27.069+05:30  INFO 19320 --- [Jira] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-05-01T22:00:27.302+05:30  WARN 19320 --- [Jira] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-05-01T22:00:27.302+05:30  WARN 19320 --- [Jira] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.error             : Duplicate entry 'prateek@gmail.com' for key 'user.UKob8kqyqqgmefl0aco34akdtpe'
+2026-05-01T22:00:27.350+05:30 ERROR 19320 --- [Jira] [http-nio-8080-exec-2] com.prakar.jira.advice.GlobalAdvice      : 2026-05-01T22:00:27.350942400 -- Req:SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@75d727b8]  -- logs:could not execute statement [Duplicate entry 'prateek@gmail.com' for key 'user.UKob8kqyqqgmefl0aco34akdtpe'] [insert into user (email,password,role,user_name) values (?,?,?,?)]; SQL [insert into user (email,password,role,user_name) values (?,?,?,?)]; constraint [user.UKob8kqyqqgmefl0aco34akdtpe]
+2026-05-01T22:00:27.385+05:30  WARN 19320 --- [Jira] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry 'prateek@gmail.com' for key 'user.UKob8kqyqqgmefl0aco34akdtpe'] [insert into user (email,password,role,user_name) values (?,?,?,?)]; SQL [insert into user (email,password,role,user_name) values (?,?,?,?)]; constraint [user.UKob8kqyqqgmefl0aco34akdtpe]]
+2026-05-01T23:35:28.512+05:30  WARN 19320 --- [Jira] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m7s820ms667µs400ns).

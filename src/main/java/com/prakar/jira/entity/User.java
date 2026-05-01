@@ -18,6 +18,9 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(
+        uniqueConstraints = @UniqueConstraint(columnNames = "email")
+)
 public class User implements UserDetails {
 
     @Id
@@ -27,7 +30,9 @@ public class User implements UserDetails {
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
-    private Role  role;
+    private Role role = Role.EMPLOYEE;
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -57,5 +62,16 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

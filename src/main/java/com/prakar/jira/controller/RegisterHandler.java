@@ -26,6 +26,7 @@ public class RegisterHandler {
     public ResponseEntity<ApiResponse<Object>>
     register ( @Valid @RequestBody UserRegistration user,
                HttpServletRequest request){
+        System.out.println("registerUser Handler: UserRegistration : "+user);
         userServiceCustom.registerUser(user);
         return ResponseUtil.buildResponse(user,request, HttpStatus.CREATED);
     }
@@ -35,6 +36,6 @@ public class RegisterHandler {
     getUser ( @RequestBody UserRegistration user,
                HttpServletRequest request){
         userServiceCustom.getUser(user);
-        return ResponseUtil.buildResponse(user,request, HttpStatus.CREATED);
+        return ResponseUtil.buildResponse(user,request, HttpStatus.OK);
     }
 }
