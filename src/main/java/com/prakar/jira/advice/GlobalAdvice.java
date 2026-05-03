@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -55,7 +56,7 @@ public class GlobalAdvice {
     public ResponseEntity<ApiResponse<Object>> RuntimeExc(
             Exception ex,
             HttpServletRequest request) {
-        log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
+        log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage() + " ----" + ex.getCause());
         ApiError error = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "Exception", "sorry something went wrong");
         return buildResponse(error,request);
     }
@@ -66,6 +67,15 @@ public class GlobalAdvice {
             HttpServletRequest request) {
         log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
         ApiError error = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "DataAccessException", "sorry something went wrong");
+        return buildResponse(error,request);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<ApiResponse<Object>> RuntimeExc(
+            BadCredentialsException ex,
+            HttpServletRequest request) {
+            log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
+        ApiError error = new ApiError(HttpStatus.UNAUTHORIZED, "BadCredentialsException", "Invalid username or password");
         return buildResponse(error,request);
     }
 

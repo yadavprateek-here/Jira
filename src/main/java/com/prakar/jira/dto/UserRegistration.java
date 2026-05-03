@@ -8,10 +8,11 @@ import org.springframework.stereotype.Component;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class UserRegistration {
 
     private String userName;
-    @NonNull @Email
+    @Email
     private String email;
 
     private String password;

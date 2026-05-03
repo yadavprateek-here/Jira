@@ -4,17 +4,23 @@ import com.prakar.jira.dao.UserRepository;
 import com.prakar.jira.dao.UserRepositoryCustom;
 import com.prakar.jira.dto.UserRegistration;
 import com.prakar.jira.entity.User;
+import com.prakar.jira.entity.UserInfo;
 import com.prakar.jira.exception.ResourceNotFoundException;
 import com.prakar.jira.util.DataMapper;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceCustom {
 
+
     private final UserRepository userRepository;
     private final UserRepositoryCustom userRepo;
     private final DataMapper mapper;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public UserServiceCustom(UserRepository userRepository,
                              UserRepositoryCustom userRepo,
@@ -24,19 +30,35 @@ public class UserServiceCustom {
         this.userRepo = userRepo;
     }
 
-    public void registerUser(@Valid UserRegistration userRegistration) {
-        User user = new User();
-        mapper.updateUserFromDto(userRegistration,user);
-        System.out.println("registerUser: user : "+user);
-        user = userRepo.save(user);
-        mapper.updateUserToDto(user,userRegistration);
+    public UserRegistration registerUser(@Valid UserRegistration dto) {
+        User user = mapper.userRegistrationToUser(dto);
+        UserInfo userInfo = mapper.userRegistrationToUserInfo(dto);
+
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
+
+        // save
+        userRepository.save(user);
+        userInfo = userRepo.save(userInfo);
+
+        // return safe response
+        dto = mapper.toDto(userInfo);
+        dto.setPassword("");
+        return dto;
     }
 
-    public void getUser(UserRegistration userRegistration) {
-        User user = userRepo.findByEmail(userRegistration.getEmail()).orElseThrow(()-> new ResourceNotFoundException(
-                "User Not Found with UserName:"+userRegistration.getEmail()
+    public UserRegistration getUser(UserRegistration dto) {
+        UserRegistration finalDto = dto;
+        UserInfo userInfo = userRepo.findByEmail(dto.getEmail()).orElseThrow(()-> new ResourceNotFoundException(
+                "User Not Found with UserName:"+ finalDto.getEmail()
         ));
-        mapper.updateUserToDto(user,userRegistration);
+        dto = mapper.toDto(userInfo);
+        System.out.println("user:"+userInfo  +"///getUser: " + dto);
+        return dto;
 
+    }
+
+    public UserRegistration getUserByEmail(String email) {
+        UserInfo userInfo = userRepo.findByEmail(email).orElseThrow( ()-> new ResourceNotFoundException("User Not Found"));
+        return mapper.toDto(userInfo);
     }
 }

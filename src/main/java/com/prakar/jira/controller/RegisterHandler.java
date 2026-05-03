@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,7 +29,7 @@ public class RegisterHandler {
     register ( @Valid @RequestBody UserRegistration user,
                HttpServletRequest request){
         System.out.println("registerUser Handler: UserRegistration : "+user);
-        userServiceCustom.registerUser(user);
+        user = userServiceCustom.registerUser(user);
         return ResponseUtil.buildResponse(user,request, HttpStatus.CREATED);
     }
 
@@ -35,7 +37,17 @@ public class RegisterHandler {
     ResponseEntity<ApiResponse<Object>>
     getUser ( @RequestBody UserRegistration user,
                HttpServletRequest request){
-        userServiceCustom.getUser(user);
+        user = userServiceCustom.getUser(user);
         return ResponseUtil.buildResponse(user,request, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/whoami")
+    ResponseEntity<ApiResponse<Object>>
+    check (
+              HttpServletRequest request){
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName(); // 👈 your username (email)
+        return ResponseUtil.buildResponse(userServiceCustom.getUserByEmail(email),request, HttpStatus.OK);
     }
 }
