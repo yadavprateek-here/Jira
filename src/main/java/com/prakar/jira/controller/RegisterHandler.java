@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +34,8 @@ public class RegisterHandler {
         return ResponseUtil.buildResponse(user,request, HttpStatus.CREATED);
     }
 
+
+    @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping(path = "/finduser")
     ResponseEntity<ApiResponse<Object>>
     getUser ( @RequestBody UserRegistration user,
@@ -40,6 +43,7 @@ public class RegisterHandler {
         user = userServiceCustom.getUser(user);
         return ResponseUtil.buildResponse(user,request, HttpStatus.OK);
     }
+
 
     @GetMapping(path = "/whoami")
     ResponseEntity<ApiResponse<Object>>

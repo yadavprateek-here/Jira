@@ -11,6 +11,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -76,6 +77,15 @@ public class GlobalAdvice {
             HttpServletRequest request) {
             log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
         ApiError error = new ApiError(HttpStatus.UNAUTHORIZED, "BadCredentialsException", "Invalid username or password");
+        return buildResponse(error,request);
+    }
+
+    @ExceptionHandler(AuthorizationDeniedException.class)
+    public ResponseEntity<ApiResponse<Object>> RuntimeExc(
+            AuthorizationDeniedException ex,
+            HttpServletRequest request) {
+        log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
+        ApiError error = new ApiError(HttpStatus.UNAUTHORIZED, "AuthorizationDeniedException", "Authorization Required");
         return buildResponse(error,request);
     }
 
