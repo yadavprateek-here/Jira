@@ -1,6 +1,8 @@
 package com.prakar.jira.util;
 
+import com.prakar.jira.dto.CreateTicket;
 import com.prakar.jira.dto.UserRegistration;
+import com.prakar.jira.entity.Ticket;
 import com.prakar.jira.entity.User;
 import com.prakar.jira.entity.UserInfo;
 import org.mapstruct.Mapper;
@@ -28,5 +30,8 @@ public interface DataMapper {
     // response
     @Mapping(target = "password", ignore = true)
     UserRegistration toDto(UserInfo userInfo);
+
+    Ticket dtoToTicket (CreateTicket t);
+
 
 }

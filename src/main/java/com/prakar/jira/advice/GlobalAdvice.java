@@ -1,6 +1,7 @@
 package com.prakar.jira.advice;
 
 import com.prakar.jira.exception.ResourceNotFoundException;
+import com.prakar.jira.exception.TicketException;
 import com.prakar.jira.response.ApiError;
 import com.prakar.jira.response.ApiResponse;
 import com.prakar.jira.response.Meta;
@@ -86,6 +87,15 @@ public class GlobalAdvice {
             HttpServletRequest request) {
         log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
         ApiError error = new ApiError(HttpStatus.UNAUTHORIZED, "AuthorizationDeniedException", "Authorization Required");
+        return buildResponse(error,request);
+    }
+
+    @ExceptionHandler(TicketException.class)
+    public ResponseEntity<ApiResponse<Object>> TicketException(
+            TicketException ex,
+            HttpServletRequest request) {
+        log.error(LocalDateTime.now() + " -- Req:"+request+"  -- logs:"+ex.getMessage());
+        ApiError error = new ApiError(HttpStatus.BAD_REQUEST, "TicketException", ex.getMessage());
         return buildResponse(error,request);
     }
 

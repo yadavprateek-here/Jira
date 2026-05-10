@@ -57,8 +57,14 @@ public class UserServiceCustom {
 
     }
 
+    public UserInfo getUser(String email) {
+        return userRepo.findByEmail(email).orElseThrow(()-> new ResourceNotFoundException("User Not Found"));
+    }
+
     public UserRegistration getUserByEmail(String email) {
         UserInfo userInfo = userRepo.findByEmail(email).orElseThrow( ()-> new ResourceNotFoundException("User Not Found"));
         return mapper.toDto(userInfo);
     }
+
+
 }
