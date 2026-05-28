@@ -1,9 +1,11 @@
 package com.prakar.jira.service;
 
 import com.prakar.jira.aspects.LoggingAspects;
+import com.prakar.jira.dao.TicketHistoryRepository;
 import com.prakar.jira.dao.TicketRepository;
 import com.prakar.jira.dto.CreateTicket;
 import com.prakar.jira.entity.Ticket;
+import com.prakar.jira.entity.TicketHistory;
 import com.prakar.jira.entity.UserInfo;
 import com.prakar.jira.exception.ResourceNotFoundException;
 import com.prakar.jira.exception.TicketException;
@@ -87,13 +89,18 @@ public class TicketService {
     private final DataMapper mapper;
     private final UserServiceCustom userService;
     private final TicketRepository ticketRepo;
+    private final TicketHistoryService ticketHistoryService;
 
     private static final Logger log = LoggerFactory.getLogger(TicketService.class);
 
-    public TicketService(DataMapper mapper, UserServiceCustom userService, TicketRepository ticketRepo) {
+    public TicketService(DataMapper mapper,
+                         UserServiceCustom userService,
+                         TicketRepository ticketRepo,
+                         TicketHistoryService ticketHistoryService) {
         this.mapper = mapper;
         this.userService = userService;
         this.ticketRepo = ticketRepo;
+        this.ticketHistoryService = ticketHistoryService;
     }
 
     // 🔹 Helper method (reusable)
@@ -129,6 +136,16 @@ public class TicketService {
 
         Ticket saved = ticketRepo.save(ticket);
 
+        TicketHistory newTicketHistory = new TicketHistory();
+        newTicketHistory.setTicket(saved);
+        newTicketHistory.setFieldName("status");
+        newTicketHistory.setOldValue(Status.NULL.name());
+        newTicketHistory.setNewValue(Status.OPEN.name());
+        newTicketHistory.setChangedBy(getCurrentUser());
+        newTicketHistory.setChangedAt(LocalDateTime.now());
+
+        ticketHistoryService.saveTicketHistory(newTicketHistory);
+
         log.info("Ticket created with id: {}", saved.getId());
 
         return saved;
@@ -153,5 +170,35 @@ public class TicketService {
         return ticketRepo.findByCreatedByAndStatusEquals(
                 getCurrentUser(), Status.OPEN
         );
+    }
+
+
+    public Ticket updateStatus(Long ticketId, Status newStatus) {
+
+        Ticket ticket = ticketRepo.findById(ticketId).orElseThrow();
+        Status oldStatus = ticket.getStatus();
+        ticket.setStatus(newStatus);
+        ticket =  ticketRepo.save(ticket);
+        saveHistory(ticket, "status", oldStatus.name(), newStatus.name());
+
+        return ticket;
+    }
+
+
+    private TicketHistory saveHistory(Ticket ticket, String field, String oldVal, String newVal) {
+
+        TicketHistory history = new TicketHistory();
+        history.setTicket(ticket);
+        history.setFieldName(field);
+        history.setOldValue(oldVal);
+        history.setNewValue(newVal);
+        history.setChangedBy(getCurrentUser());
+        history.setChangedAt(LocalDateTime.now());
+        return ticketHistoryService.saveTicketHistory(history);
+
+    }
+
+    public List<TicketHistory> viewTicketHistory(Long ticketId){
+        return ticketHistoryService.getTicketHistory(ticketId);
     }
 }

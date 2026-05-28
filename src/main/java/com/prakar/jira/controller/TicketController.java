@@ -6,6 +6,7 @@ import com.prakar.jira.response.ApiResponse;
 import com.prakar.jira.service.TicketService;
 
 import com.prakar.jira.util.ResponseUtil;
+import com.prakar.jira.util.Status;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,6 +47,16 @@ public class TicketController {
     public ResponseEntity<ApiResponse<Object>> viewTicketsCreatedByMeOpen( HttpServletRequest request){
         return ResponseUtil.buildResponse(ticketService.viewTicketsCreatedByMeOpen(),request,HttpStatus.OK);
     }
+
+    @PutMapping("/updateTicket")
+    public ResponseEntity<ApiResponse<Object>> updateStatus(@RequestParam Long ticketId, @RequestParam Status newStatus,HttpServletRequest request){
+        return ResponseUtil.buildResponse(ticketService.updateStatus(ticketId,newStatus),request,HttpStatus.OK);
+    }
+    @GetMapping("/viewTicketHistory")
+    public ResponseEntity<ApiResponse<Object>> viewTicketHistory( @RequestParam Long ticketId,HttpServletRequest request){
+        return ResponseUtil.buildResponse(ticketService.viewTicketHistory(ticketId),request,HttpStatus.OK);
+    }
+
 
 
 }

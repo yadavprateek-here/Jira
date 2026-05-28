@@ -33,7 +33,11 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
 
+
+
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/", "/index.html", "/styles.css", "/app.js").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/index.html", "/favicon.ico", "/").permitAll()
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/register").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
